@@ -3,8 +3,8 @@
 A deck building game to defeat monsters and bosses for rewards. Goal of the game is to beat 4 bosses, level up to make the game a bit harder. Using Unity to create card game. Created generic cards in paint to represent Attack, Defend and PowerUp cards for prefabs.
 
 
-Cards:  Created cards using sprites and creating a basic card prefab to copy all other cards off of. <br>
-Hand: Created a specified location for the hand of the player.  Put anchor attached to bottom of Canvas.  used Horizontal Layout Group to help with spacing between each card while in hand.
+<h6>Cards:</h6>  Created cards using sprites and creating a basic card prefab to copy all other cards off of. <br>
+<h6>Hand:</h6> Created a specified location for the hand of the player.  Put anchor attached to bottom of Canvas.  used Horizontal Layout Group to help with spacing between each card while in hand.
 
 
 Scriptable Objects
