@@ -7,18 +7,28 @@ public class Tester : MonoBehaviour
 
     public Card Card;
 
-    public CardHolder CardHolder;
-    [ContextMenu("Add")]
-    void AddCard()
+    public CardController CardController;
+
+    [ContextMenu("Draw")]
+    void DrawCard()
     {
-        CardHolder.AddCard(Card);
+        CardController.Draw();
     }
 
-    [ContextMenu("Remove")]
+    [ContextMenu("Discard")]
     void RemoveCard()
     {
-        CardHolder.RemoveCard(Card);
+        CardController.Discard(Card);
     }
-
+    [ContextMenu("Shuffle")]
+    void Shuffle()
+    {
+        CardController.ShuffleDiscardIntoDeck();
+    }
+    [ContextMenu("Play")]
+    void Play()
+    {
+        CardController.PlayEffects(Card);
+    }
 
 }
