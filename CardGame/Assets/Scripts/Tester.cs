@@ -4,31 +4,31 @@ using UnityEngine;
 
 public class Tester : MonoBehaviour
 {
-
     public Card Card;
-
-    public CardController CardController;
-
     [ContextMenu("Draw")]
     void DrawCard()
     {
-        CardController.Draw();
+        CardController.Instance.Draw();
     }
 
     [ContextMenu("Discard")]
     void RemoveCard()
     {
-        CardController.Discard(Card);
+        CardController.Instance.Discard(Card);
     }
     [ContextMenu("Shuffle")]
     void Shuffle()
     {
-        CardController.ShuffleDiscardIntoDeck();
+        CardController.Instance.ShuffleDiscardIntoDeck();
     }
     [ContextMenu("Play")]
     void Play()
     {
-        CardController.PlayEffects(Card);
+        CardController.Instance.PlayedEffects(Card);
+    }    [ContextMenu("AfterPlay")]
+    void AfterPlay()
+    {
+        CardController.Instance.AfterPlayedEffects(Card);
     }
 
 }

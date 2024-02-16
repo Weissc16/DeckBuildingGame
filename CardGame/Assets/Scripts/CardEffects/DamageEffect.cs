@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageEffect : MonoBehaviour, IPlayed
+public class DamageEffect : MonoBehaviour, ICardEffect
 {
     public int Amount;
     //states damage done in debug log.  Amount is fixed currently and input through tester.

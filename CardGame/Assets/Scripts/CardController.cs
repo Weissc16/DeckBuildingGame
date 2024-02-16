@@ -5,11 +5,20 @@ using System.Linq;
 
 public class CardController : MonoBehaviour
 {
+    #region Fields/Properties
+    public static CardController Instance;
+
     public CardHolder Hand;
 
     public CardHolder Deck;
 
     public CardHolder DiscardPile;
+    #endregion
+    #region Card Controls 
+    void Awake()
+    {
+        Instance = this;
+    }
 
     public void Draw()
     {
@@ -41,12 +50,23 @@ public class CardController : MonoBehaviour
             Deck.AddCard(card);
         }
     }
-    public void PlayEffects(Card card)
+    #endregion
+    #region Card Events
+    public void PlayedEffects(Card card)
     {
-        foreach(IPlayed effect in card.GetComponentsInChildren<IPlayed>())
+        Transform effectsHolder = card.transform.Find("Effects/Played");
+        foreach(ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
+        {
+            effect.Apply();
+        }
+    }    public void AfterPlayedEffects(Card card)
+    {
+        Transform effectsHolder = card.transform.Find("Effects/AfterPlayed");
+        foreach(ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
         {
             effect.Apply();
         }
     }
-    
+    #endregion
+
 }

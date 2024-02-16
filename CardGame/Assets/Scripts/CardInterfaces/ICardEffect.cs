@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IPlayed
+public interface ICardEffect
 {
     void Apply();
 }
