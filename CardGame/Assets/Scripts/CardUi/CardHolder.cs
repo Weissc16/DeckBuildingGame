@@ -36,9 +36,9 @@ public class CardHolder : MonoBehaviour
         CardHolder oldHolder = card.GetComponentInParent<CardHolder>();
         rect.SetParent(this.transform);
 
-        rect.LeanRotateAroundLocal(Vector3.up, oldHolder.CardRotation - CardRotation, 0.4f);
-        //can use .setOnComplete() to do an action after everything is completed. Which in this case is the movement animation.
-        rect.LeanMove(Holder.anchoredPosition3D, .75f).setOnComplete(() =>
+
+        card.Rotate(oldHolder.CardRotation - CardRotation, 0.4f);
+        card.Move(Holder.anchoredPosition3D, 0.5f, () =>
         {
             Cards.Add(card);
             CardAmount.text = "" + Cards.Count;

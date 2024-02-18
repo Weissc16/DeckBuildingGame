@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour
 {
     #region Properties/Fields
+    public RectTransform Rect { get { return _rect; } }
+
     RectTransform _rect;
 
     Transform _back;
