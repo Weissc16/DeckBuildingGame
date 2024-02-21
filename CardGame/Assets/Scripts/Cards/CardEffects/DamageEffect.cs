@@ -8,6 +8,14 @@ public class DamageEffect : MonoBehaviour, ICardEffect
     //states damage done in debug log.  Amount is fixed currently and input through tester.
     public void Apply()
     {
-        Debug.LogFormat("Deals {0} damage", Amount);
+        List<object> targets = GetComponent<ITarget>().GetTargets();
+        foreach (Object o in targets)
+        {
+            Unit unit = o as Unit;
+            // unit.TakeDamage(Amount)
+            Debug.LogFormat("Unit {0} took {1} damage", unit.name, Amount);
+        }
+        
+
     }
 }

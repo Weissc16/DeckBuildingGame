@@ -71,7 +71,7 @@ public class CardController : MonoBehaviour
     }    public void AfterPlayedEffects(Card card)
     {
         Transform effectsHolder = card.transform.Find("Effects/AfterPlayed");
-        foreach(ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
+        foreach (ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
         {
             effect.Apply();
         }
