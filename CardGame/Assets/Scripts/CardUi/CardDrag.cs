@@ -46,8 +46,10 @@ public class CardDrag : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
         // Debug.Log(Mouse.current.position.ReadValue().y);
         if (Mouse.current.position.ReadValue().y >= 180)
         {
-            Debug.Log("Card was used");
-        } else
+            CardController.Instance.PlayedEffects(_card);
+            CardController.Instance.AfterPlayedEffects(_card);
+        }
+        else
         {
             _card.Move(_savedPosition, 0.2f, () => { });
         }

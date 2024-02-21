@@ -5,10 +5,15 @@ using UnityEngine;
 public class Tester : MonoBehaviour
 {
     public Card Card;
+
+    private void Start()
+    {
+        StartCoroutine(CardController.Instance.Draw(5));
+    }
     [ContextMenu("Draw")]
     void DrawCard()
     {
-        CardController.Instance.Draw();
+        StartCoroutine(CardController.Instance.Draw());
     }
 
     [ContextMenu("Discard")]
@@ -19,7 +24,7 @@ public class Tester : MonoBehaviour
     [ContextMenu("Shuffle")]
     void Shuffle()
     {
-        CardController.Instance.ShuffleDiscardIntoDeck();
+        StartCoroutine(CardController.Instance.ShuffleDiscardIntoDeck());
     }
     [ContextMenu("Play")]
     void Play()

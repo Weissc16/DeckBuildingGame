@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CardHolder : MonoBehaviour
 {
+    public const float CardMoveDuration = 0.5f;
+    public const float CardRotateDuration = 0.5f;
 
     public List<Card> Cards;
 
@@ -37,8 +39,8 @@ public class CardHolder : MonoBehaviour
         rect.SetParent(this.transform);
 
 
-        card.Rotate(oldHolder.CardRotation - CardRotation, 0.4f);
-        card.Move(Holder.anchoredPosition3D, 0.5f, () =>
+        card.Rotate(oldHolder.CardRotation - CardRotation, CardRotateDuration);
+        card.Move(Holder.anchoredPosition3D, CardMoveDuration, () =>
         {
             Cards.Add(card);
             CardAmount.text = "" + Cards.Count;

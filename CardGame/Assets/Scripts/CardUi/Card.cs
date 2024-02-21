@@ -14,8 +14,8 @@ public class Card : MonoBehaviour
     Transform _back;
     Transform _front;
 
-    LTDescr _movementTween;
-    LTDescr _rotationTween;
+    int _movementTween;
+    int _rotationTween;
     #endregion
 
     #region Unity Events
@@ -43,19 +43,19 @@ public class Card : MonoBehaviour
     #region Methods
     public void Move(Vector3 position, float duration, System.Action onComplete)
     {
-        if (_movementTween != null)
+        if (LeanTween.isTweening(gameObject) && LeanTween.isTweening(_movementTween))
         {
-            LeanTween.cancel(_movementTween.id);
+            LeanTween.cancel(_movementTween);
         }
-       _movementTween = _rect.LeanMove(position, duration).setOnComplete(onComplete);
+       _movementTween = _rect.LeanMove(position, duration).setOnComplete(onComplete).id;
     }
     public void Rotate(float amount, float duration)
     {
-        if (_rotationTween != null)
+        if (LeanTween.isTweening(gameObject) && LeanTween.isTweening(_rotationTween))
         {
-            LeanTween.cancel(_rotationTween.id);
+            LeanTween.cancel(_rotationTween);
         }
-        _rotationTween = _rect.LeanRotateAroundLocal(Vector3.up, amount, duration);
+        _rotationTween = _rect.LeanRotateAroundLocal(Vector3.up, amount, duration).id;
     }
     #endregion 
 }

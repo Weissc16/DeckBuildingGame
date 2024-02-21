@@ -20,16 +20,24 @@ public class CardController : MonoBehaviour
         Instance = this;
     }
 
-    public void Draw()
+    public IEnumerator Draw(int amount=1)
     {
-        if(Deck.Cards.Count == 0)
+        while (amount > 0) {
+        if (Deck.Cards.Count == 0)
         {
-            Debug.Log("Not enough cards to draw");
-            return;
+            yield return StartCoroutine(ShuffleDiscardIntoDeck());
+            yield return new WaitForSeconds(CardHolder.CardMoveDuration);
+            if (Deck.Cards.Count == 0)
+            {
+                Debug.Log("Not enough cards to draw");
+                yield break;
+            }
         }
         Card card = Deck.Cards[Deck.Cards.Count - 1];
         Deck.RemoveCard(card);
         Hand.AddCard(card);
+        yield return new WaitForSeconds(0.25f);
+        }
     }
 
     public void Discard(Card card)
@@ -39,7 +47,7 @@ public class CardController : MonoBehaviour
         DiscardPile.AddCard(card);
     }
 
-    public void ShuffleDiscardIntoDeck()
+    public IEnumerator ShuffleDiscardIntoDeck()
     {
         List<Card> cards = DiscardPile.Cards;
         System.Random rand = new System.Random();
@@ -48,6 +56,7 @@ public class CardController : MonoBehaviour
         {
             DiscardPile.RemoveCard(card);
             Deck.AddCard(card);
+            yield return new WaitForSeconds(0.1f);
         }
     }
     #endregion
