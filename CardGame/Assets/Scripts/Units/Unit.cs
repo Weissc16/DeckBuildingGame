@@ -5,6 +5,10 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public List<Stat> Stats;
+    public virtual IEnumerator Recover()
+    {
+        yield return null;
+    }
 
     [ContextMenu("Generate Stats")]
 

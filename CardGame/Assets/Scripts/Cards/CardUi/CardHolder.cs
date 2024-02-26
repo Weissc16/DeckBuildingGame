@@ -21,9 +21,9 @@ public class CardHolder : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Cards = new List<Card>(GetComponentsInChildren<Card>());
+        Cards = new List<Card>();
         CardAmount.text = "" + Cards.Count;
-        SetInitialRotation();
+
 
     }
 
@@ -56,7 +56,7 @@ public class CardHolder : MonoBehaviour
 
 
     //rotates the cards upsidedown at start of game for Deck/Discard
-    void SetInitialRotation()
+    public void SetInitialRotation()
     {
         foreach(Card card in Cards)
         {

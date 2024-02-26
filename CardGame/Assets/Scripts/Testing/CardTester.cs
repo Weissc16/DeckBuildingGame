@@ -6,10 +6,6 @@ public class CardTester : MonoBehaviour
 {
     public Card Card;
 
-    private void Start()
-    {
-        StartCoroutine(CardController.Instance.Draw(5));
-    }
     [ContextMenu("Draw")]
     void DrawCard()
     {

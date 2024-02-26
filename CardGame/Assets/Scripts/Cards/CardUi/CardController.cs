@@ -13,6 +13,8 @@ public class CardController : MonoBehaviour
     public CardHolder Deck;
 
     public CardHolder DiscardPile;
+
+    public CardList PlayerDeck;
     #endregion
     #region Card Controls 
     void Awake()
@@ -36,6 +38,7 @@ public class CardController : MonoBehaviour
         Card card = Deck.Cards[Deck.Cards.Count - 1];
         Deck.RemoveCard(card);
         Hand.AddCard(card);
+        amount--;
         yield return new WaitForSeconds(0.25f);
         }
     }
