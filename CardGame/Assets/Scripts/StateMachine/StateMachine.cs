@@ -6,6 +6,7 @@ public class StateMachine : MonoBehaviour
 {
     public static StateMachine Instance;
     public State Current { get { return _current; } }
+    public Queue<Card> CardsToPlay;
     public Queue<Unit> Units;
     public Unit CurrentUnit;
 
@@ -15,6 +16,7 @@ public class StateMachine : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        CardsToPlay = new Queue<Card>();
     }
     private void Start()
     {

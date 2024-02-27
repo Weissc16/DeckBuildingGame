@@ -9,11 +9,13 @@ public class PlayerUnit : Unit
     public int CurrentEnergy;
 
     public int DrawAmount;
+    public int MaxCards;
+
 
     public override IEnumerator Recover()
     {
         CurrentEnergy = MaxEnergy;
-
-        yield return StartCoroutine(CardController.Instance.Draw(DrawAmount)); 
+        int cardsToDraw = Mathf.Min(MaxCards - CardController.Instance.Hand.Cards.Count, DrawAmount);
+        yield return StartCoroutine(CardController.Instance.Draw(cardsToDraw)); 
     }
 }

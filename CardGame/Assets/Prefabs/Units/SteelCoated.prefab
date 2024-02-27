@@ -100,3 +100,4 @@ MonoBehaviour:
   MaxEnergy: 3
   CurrentEnergy: 3
   DrawAmount: 5
+  MaxCards: 7

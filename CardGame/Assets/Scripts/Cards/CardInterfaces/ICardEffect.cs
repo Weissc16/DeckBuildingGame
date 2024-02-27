@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ICardEffect
 {
-    void Apply();
+    IEnumerator Apply(List<object> targets);
 }

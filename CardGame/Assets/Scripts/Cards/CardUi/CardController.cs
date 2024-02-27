@@ -63,22 +63,4 @@ public class CardController : MonoBehaviour
         }
     }
     #endregion
-    #region Card Events
-    public void PlayedEffects(Card card)
-    {
-        Transform effectsHolder = card.transform.Find("Effects/Played");
-        foreach(ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
-        {
-            effect.Apply();
-        }
-    }    public void AfterPlayedEffects(Card card)
-    {
-        Transform effectsHolder = card.transform.Find("Effects/AfterPlayed");
-        foreach (ICardEffect effect in effectsHolder.GetComponentsInChildren<ICardEffect>())
-        {
-            effect.Apply();
-        }
-    }
-    #endregion
-
 }

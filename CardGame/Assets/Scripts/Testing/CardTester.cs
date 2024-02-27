@@ -22,14 +22,4 @@ public class CardTester : MonoBehaviour
     {
         StartCoroutine(CardController.Instance.ShuffleDiscardIntoDeck());
     }
-    [ContextMenu("Play")]
-    void Play()
-    {
-        CardController.Instance.PlayedEffects(Card);
-    }    [ContextMenu("AfterPlay")]
-    void AfterPlay()
-    {
-        CardController.Instance.AfterPlayedEffects(Card);
-    }
-
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ITarget 
 {
-    List<object> GetTargets();
+    IEnumerator GetTargets(List<object> targets);
 }

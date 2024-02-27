@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Unit : MonoBehaviour
+
+public class Unit : MonoBehaviour, IPointerClickHandler
 {
     public List<Stat> Stats;
     public virtual IEnumerator Recover()
@@ -22,6 +24,11 @@ public class Unit : MonoBehaviour
             stat.Value = Random.Range(0, 100);
             Stats.Add(stat);
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Aaaah"+eventData);
     }
 
 }
