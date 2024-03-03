@@ -12,11 +12,19 @@ public class PlayCardState : State
 
     Coroutine cardSequencer;
 
+    HorizontalLayoutGroup _handLayout;
+
+    private void Awake()
+    {
+        _handLayout = CardController.Instance.Hand.Holder.GetComponent<HorizontalLayoutGroup>();
+    }
+
 
     public override IEnumerator Enter()
     {
-        yield return null;
+        yield return new WaitForSeconds(0.5f);
         EndTurnButton(true);
+        _handLayout.enabled = false;
         cardSequencer = StartCoroutine(CardSequencer());
     }
     
@@ -24,6 +32,7 @@ public class PlayCardState : State
     {
         yield return null;
         EndTurnButton(false);
+        _handLayout.enabled = true;
         StopCoroutine(cardSequencer);
     }
 
@@ -36,7 +45,9 @@ public class PlayCardState : State
                 Card card = machine.CardsToPlay.Dequeue();
                 Debug.Log("Playing" + card);
                 yield return StartCoroutine(PlayCardEffect(card, card.transform.Find(PlayedGameObject)));
+                yield return new WaitForSeconds(0.2f);
                 yield return StartCoroutine(PlayCardEffect(card, card.transform.Find(AfterPlayedGameObject)));
+                yield return new WaitForSeconds(0.2f);
             }
             yield return null;
         }
@@ -50,13 +61,13 @@ public class PlayCardState : State
             List<object> targets = new List<object>();
             if (targeter == null)
             {
-                yield break;
+                continue;
             }
             yield return StartCoroutine(targeter.GetTargets(targets));
             ICardEffect effect = playTransform.GetChild(i).GetComponent<ICardEffect>();
             if (effect == null)
             {
-                yield break;
+                continue;
             }
             yield return StartCoroutine(effect.Apply(targets));
         }

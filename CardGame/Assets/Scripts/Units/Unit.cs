@@ -4,31 +4,49 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 
+public delegate void OnUnit(Unit unit);
 public class Unit : MonoBehaviour, IPointerClickHandler
 {
-    public List<Stat> Stats;
+    [SerializeField]
+    List<Stat> _stats;
+    public OnUnit onUnitClicked = delegate { };
+    public OnUnit onUnitTakeTurn = delegate { };
     public virtual IEnumerator Recover()
     {
         yield return null;
+        SetStatValue(StatType.Block, 0);
+        onUnitTakeTurn(this);
     }
 
     [ContextMenu("Generate Stats")]
 
     void GenerateStats()
     {
-        Stats = new List<Stat>();
+        _stats = new List<Stat>();
         for (int i = 0; i < (int)StatType.Dexterity + 1; i++)
         {
             Stat stat = new Stat();
             stat.Type = (StatType)i;
             stat.Value = Random.Range(0, 100);
-            Stats.Add(stat);
+            _stats.Add(stat);
         }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Aaaah"+eventData);
+        onUnitClicked(this);
+    }
+
+    public int GetStatValue(StatType type)
+    {
+        int statValue = _stats[(int)type].Value;
+
+        return statValue;
+    }
+
+    public void SetStatValue(StatType type, int value)
+    {
+        _stats[(int)type].Value = value;
     }
 
 }

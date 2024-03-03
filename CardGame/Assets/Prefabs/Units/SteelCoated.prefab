@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a69163e6480b434f995f11e9e38630e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stats:
+  _stats:
   - Type: 0
     Value: 100
   - Type: 1
@@ -98,6 +98,6 @@ MonoBehaviour:
   - Type: 4
     Value: 0
   MaxEnergy: 3
-  CurrentEnergy: 3
+  _currentEnergy: 0
   DrawAmount: 5
   MaxCards: 7
