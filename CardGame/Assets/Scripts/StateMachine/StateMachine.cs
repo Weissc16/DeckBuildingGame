@@ -17,6 +17,7 @@ public class StateMachine : MonoBehaviour
     {
         Instance = this;
         CardsToPlay = new Queue<Card>();
+        Application.targetFrameRate = 60;
     }
     private void Start()
     {

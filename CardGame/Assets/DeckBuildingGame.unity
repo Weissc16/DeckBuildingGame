@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouthWorm (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1648651463683379919, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2838189217732856305, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.31
@@ -1158,7 +1162,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 364, y: 0.000015258789}
+  m_AnchoredPosition: {x: 364, y: 0}
   m_SizeDelta: {x: 100, y: 134.0937}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1012872026
@@ -1501,7 +1505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 277, y: -48}
+  m_AnchoredPosition: {x: 354.58, y: -25}
   m_SizeDelta: {x: 115.8849, y: 37.7201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1230612294
@@ -1988,6 +1992,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouthWorm (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1648651463683379919, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2838189217732856305, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.27
@@ -2090,6 +2098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouthWorm
       objectReference: {fileID: 0}
+    - target: {fileID: 1648651463683379919, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2838189217732856305, guid: 3e168c62d9ba4d44e9334874e358b6d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.3
@@ -2146,6 +2158,10 @@ PrefabInstance:
     - target: {fileID: 2220100309364503388, guid: 7483a19f1c29ec84c8a47186069f7412, type: 3}
       propertyPath: m_Name
       value: SteelCoated
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220100309364503388, guid: 7483a19f1c29ec84c8a47186069f7412, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3408390058190760034, guid: 7483a19f1c29ec84c8a47186069f7412, type: 3}
       propertyPath: m_LocalPosition.x

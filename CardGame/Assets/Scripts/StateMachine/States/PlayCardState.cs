@@ -64,12 +64,10 @@ public class PlayCardState : State
                 continue;
             }
             yield return StartCoroutine(targeter.GetTargets(targets));
-            ICardEffect effect = playTransform.GetChild(i).GetComponent<ICardEffect>();
-            if (effect == null)
+            foreach(CardEffect effect in playTransform.GetChild(i).GetComponents<CardEffect>())
             {
-                continue;
+                yield return StartCoroutine(effect.Apply(targets));
             }
-            yield return StartCoroutine(effect.Apply(targets));
         }
     }
 

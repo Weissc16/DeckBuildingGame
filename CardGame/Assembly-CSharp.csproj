@@ -60,8 +60,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Testing\CombatTester.cs" />
     <Compile Include="Assets\Scripts\Testing\CardTester.cs" />
+    <Compile Include="Assets\Scripts\Cards\StatusEffects\DisableUnit.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingOptionalCancel.cs" />
-    <Compile Include="Assets\Scripts\Cards\StatusEffects\StatChangeEffect.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralCameraShake.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingUnitTests.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
@@ -74,7 +74,7 @@
     <Compile Include="Assets\Scripts\Cards\Targetting\ITarget.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingDescr.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingColorTweening.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardInterfaces\IPlayed.cs" />
+    <Compile Include="Assets\Scripts\Modifiers\ModifierTags.cs" />
     <Compile Include="Assets\Scripts\Cards\Targetting\TargetSelf.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSimpleUI.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Cards\CardEffects\Discard.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineEndless.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\Following.cs" />
+    <Compile Include="Assets\Scripts\Cards\CardEffects\CardEffect.cs" />
     <Compile Include="Assets\Scripts\Cards\CardList.cs" />
     <Compile Include="Assets\LeanTween\Testing\TestingRotate.cs" />
     <Compile Include="Assets\LeanTween\Testing\Testing243.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\Cards\Targetting\TargetAllEnemies.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplineTrack.cs" />
     <Compile Include="Assets\Scripts\Cards\CardUi\CardHolder.cs" />
+    <Compile Include="Assets\Scripts\Modifiers\ModifiedValues.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathBezier.cs" />
     <Compile Include="Assets\Scripts\Cards\Targetting\TargetPlayer.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline.cs" />
@@ -107,7 +109,6 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\TestingZLegacyExt.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralSequencer.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEventsListeners.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardInterfaces\IAfterPlayed.cs" />
     <Compile Include="Assets\Scripts\Cards\CardEffects\ChangeEnergyEffect.cs" />
     <Compile Include="Assets\Scripts\StateMachine\States\LoadState.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSpline2d.cs" />
@@ -119,16 +120,15 @@
     <Compile Include="Assets\LeanTween\Examples\Scripts\PathSplinePerformance.cs" />
     <Compile Include="Assets\LeanTween\Examples\Scripts\GeneralEasingTypes.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardInterfaces\ICardEffect.cs" />
     <Compile Include="Assets\Scripts\StateMachine\States\PlayCardState.cs" />
     <Compile Include="Assets\Scripts\Cards\Playability\EnergyRequirement.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
-    <Compile Include="Assets\Scripts\Cards\CardInterfaces\INotPlayed.cs" />
     <Compile Include="Assets\IO\BattleButton.cs" />
     <Compile Include="Assets\Scripts\StateMachine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Cards\CardUi\Card.cs" />
+    <Compile Include="Assets\Scripts\Cards\StatusEffects\TagModifierStatusEffect.cs" />
     <Compile Include="Assets\Scripts\Units\StatType.cs" />
     <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
     <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1756073578628844204}
-  - component: {fileID: 5725211213945697963}
+  - component: {fileID: 7456576486371896621}
   m_Layer: 0
-  m_Name: TestStatus
+  m_Name: Weak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5725211213945697963
+--- !u!114 &7456576486371896621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7112874813970141940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2e1c71114858f04f8f968bdaf728a32, type: 3}
+  m_Script: {fileID: 11500000, guid: 983d67894c7372f4eb9dc8202b8dabd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 1
-  Amount: 3
-  _host: {fileID: 0}
-  _currentDuration: 0
-  Type: 3
+  Amount: -25
+  StacksIntesnity: 0
+  StacksDuration: 1
+  Tag: 0
+  isPercentage: 1

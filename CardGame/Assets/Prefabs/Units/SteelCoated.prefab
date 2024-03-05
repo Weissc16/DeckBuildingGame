@@ -93,10 +93,6 @@ MonoBehaviour:
     Value: 100
   - Type: 2
     Value: 0
-  - Type: 3
-    Value: 0
-  - Type: 4
-    Value: 0
   MaxEnergy: 3
   _currentEnergy: 0
   DrawAmount: 5

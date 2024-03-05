@@ -10,7 +10,5 @@ public enum StatType
 
     Block,
 
-    Strength,
-
-    Dexterity
+    None
 }

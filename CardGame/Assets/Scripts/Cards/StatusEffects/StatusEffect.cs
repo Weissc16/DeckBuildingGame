@@ -6,8 +6,13 @@ public abstract class StatusEffect : MonoBehaviour
 {
     public int Duration;
     public int Amount;
-    public Unit _host;
-    public int _currentDuration;
+
+    public bool StacksIntesnity;
+    public bool StacksDuration;
+
+    protected Unit _host;
+
+    int _currentDuration;
     private void OnEnable()
     {
         _host = GetComponentInParent<Unit>();
@@ -16,7 +21,7 @@ public abstract class StatusEffect : MonoBehaviour
             _currentDuration = Duration;
             _host.onUnitTakeTurn += DurationCountDown;
         }
-        OnInflicted();
+        Invoke("OnInflicted", 1);
     }
 
     private void OnDisable()
@@ -29,6 +34,7 @@ public abstract class StatusEffect : MonoBehaviour
 
     public virtual void OnDurationEnded()
     {
+        _host.onUnitTakeTurn -= DurationCountDown;
         Destroy(this.gameObject);
     }
     void DurationCountDown(Unit unit)
